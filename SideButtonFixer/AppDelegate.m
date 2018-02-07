@@ -409,7 +409,7 @@ typedef NS_ENUM(NSInteger, MenuItem) {
 -(void) setMenuMode:(MenuMode)menuMode {
     _menuMode = menuMode;
     
-    CGFloat color = 120;
+    CGFloat color = [self isDarkMode] ? 255.f : 0.f;
     NSFont* font = [NSFont menuFontOfSize:13];
     
     NSFontDescriptor* boldFontDesc = [NSFontDescriptor fontDescriptorWithFontAttributes:@{
@@ -420,11 +420,11 @@ typedef NS_ENUM(NSInteger, MenuItem) {
     if (!boldFont) { boldFont = font; }
     
     CGFloat boldHue = color;
-    NSColor* boldColor = [NSColor colorWithRed:boldHue/255.0 green:boldHue/255.0 blue:160/255.0 alpha:1];
+    NSColor* boldColor = [NSColor colorWithRed:boldHue/255.0 green:boldHue/255.0 blue:boldHue/255.0 alpha:1];
     
     NSDictionary* attributes = @{
                                  NSFontAttributeName: font,
-                                 NSForegroundColorAttributeName: [NSColor colorWithRed:color/255.0 green:color/255.0 blue:160/255.0 alpha:1]
+                                 NSForegroundColorAttributeName: [NSColor colorWithRed:color/255.0 green:color/255.0 blue:color/255.0 alpha:1]
                                  };
     
     NSString* appName = [[[NSBundle mainBundle] infoDictionary] objectForKey:(NSString*)kCFBundleNameKey];

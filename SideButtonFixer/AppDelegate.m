@@ -397,6 +397,11 @@ typedef NS_ENUM(NSInteger, MenuItem) {
 
 @implementation AboutView
 
+-(Boolean) isDarkMode {
+    NSString *osxMode = [[NSUserDefaults standardUserDefaults] stringForKey:@"AppleInterfaceStyle"];
+    return osxMode != nil && [osxMode isEqualToString:@"Dark"];
+}
+
 -(CGFloat) margin {
     return 17;
 }

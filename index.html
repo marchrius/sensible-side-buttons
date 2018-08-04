@@ -9,7 +9,7 @@
 
     <title>SensibleSideButtons</title>
     <meta name="description" content="Fix the side buttons on your third-party mice in macOS.">
-    <meta name="author" content="Archagon">
+    <meta name="author" content="Marchrius">
 
     <link href="normalize.css" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
@@ -21,16 +21,16 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-28279910-3"></script>
     <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-    ga('create', 'UA-44612590-5', 'auto');
-    ga('send', 'pageview');
-
+      gtag('config', 'UA-28279910-3');
     </script>
+
 </head>
 
 <body>
@@ -49,12 +49,12 @@
                 </div>
 
                 <div class="links">
-                    <a href="SensibleSideButtons-1.0.5.dmg" role="button" class="btn btn-primary">
+                    <a href="https://github.com/marchrius/sensible-side-buttons/releases/download/1.0.6/SensibleSideButtons-1.0.6.zip" role="button" class="btn btn-primary">
                         <img src="menu-white.png" alt="" width="22" height="22" class="btn-icon" />
-                        <span class="btn-title">Download v1.0.5<span class="btn-subtitle">For macOS 10.10+</span></span>
+                        <span class="btn-title">Download v1.0.6<span class="btn-subtitle">For macOS 10.10+</span></span>
                     </a>
 
-                    <a href="https://github.com/archagon/sensible-side-buttons" role="button" class="btn btn-secondary">
+                    <a href="https://github.com/marchrius/sensible-side-buttons" role="button" class="btn btn-secondary">
                         <img src="github-white.png" alt="" width="22" height="22" class="btn-icon" />
                         <span class="btn-title">View on Github</span>
                     </a>
@@ -149,7 +149,7 @@
 
                 <p>The other half of the puzzle was stifling the M4 and M5 commands and replacing them with this falsified gesture. Fortunately, macOS provides a very easy way to do this through the use of event taps. With a simple call to <code>CGEventTapCreate</code> and a filter of <code>kCGEventOtherMouseUp</code> and <code>kCGEventOtherMouseDown</code>, a callback is scheduled for each numbered mouse button click. The callback is allowed to return an event other than the default, so I simply returned <code>NULL</code> for M4 and M5 and then sent out my fake events instead. As far as I can tell, event taps have almost no overhead.</p>
 
-                <p>You can get the source code (<a href="https://github.com/archagon/sensible-side-buttons/blob/master/LICENSE">GPLv2</a>) for SensibleSideButtons on <a href="https://github.com/archagon/sensible-side-buttons">Github</a> or <a href="sensible-side-buttons-master-1.0.5.zip">as a zip</a>.</p>
+                <p>You can get the source code (<a href="https://github.com/marchrius/sensible-side-buttons/blob/master/LICENSE">GPLv2</a>) for SensibleSideButtons on <a href="https://github.com/marchrius/sensible-side-buttons">Github</a> or <a href="https://github.com/marchrius/sensible-side-buttons/archive/1.0.6.zip">as a zip</a>.</p>
             </div>
 
             <div>
@@ -158,6 +158,8 @@
                 <p>SensibleSideButtons is made by me — Alexei Baboulevitch. You can find me on Twitter @<a href="https://twitter.com/archagon">archagon</a>, and e-mail me at <a href="mailto:ssb@archagon.net">ssb@archagon.net</a>. My blog can currently be found at <a href="http://beta-blog.archagon.net">http://beta-blog.archagon.net</a>.</p>
 
                 <p>A huge thanks to Nathan Vander Wilt for the tremendous work involved in reverse-engineering event handling in macOS. I would have surely given up if his <a href="https://github.com/calftrail/Touch">Touch project</a> hadn't existed!</p>
+
+                <p>Maintained by Matteo Gaggiano (Marchrius) for this repository with support for Dark Mode and other graphic fixes. <a href="https://github.com/marchrius">Github</a> <a href="https://twitter.com/marchrius">Twitter</a></p>
 
                 <p>SensibleSideButtons is free because I believe it's an optimal solution to a longstanding issue with macOS. I'd rather treat it as a bugfix than a product and make it available for anyone to download and enjoy! However, if you find that the app improves your productivity as much as I think it will, please consider leaving a small donation or buying something through my <a href="http://amzn.to/2tlwbAB">Amazon affiliate link</a>. I'd greatly appreciate it, and it will help fund this and many other useful software endeavors.</p>
 
@@ -179,6 +181,7 @@
 
         <footer class="footer">
             <p>&copy; 2017 Alexei Baboulevitch</p>
+            <p>&copy; 2018 Matteo Gaggiano</p>
         </footer>
 
     </div> <!-- /container -->
